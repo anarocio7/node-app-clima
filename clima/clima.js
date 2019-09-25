@@ -1,3 +1,4 @@
+// Axios is a promise based HTTP Client for the browser and Node.js
 const axios = require ('axios');
 
 const getClima = async (lat, lon) => {

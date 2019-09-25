@@ -1,4 +1,3 @@
-const axios = require('axios');
 const lugar = require('../lugar/lugar')
 const clima = require('../clima/clima')
 

@@ -1,3 +1,4 @@
+// HTTP Client for browser and Node.js
 const axios = require('axios');
 
 const getLugar = async (direccion) => {
