@@ -1,5 +1,7 @@
 // HTTP Client for browser and Node.js
 const axios = require('axios');
+const config = require('../config')
+console.log(config);
 
 const getLugar = async (direccion) => {
 
@@ -7,7 +9,7 @@ const getLugar = async (direccion) => {
 
     const instance = axios.create({
         baseURL: `https://devru-latitude-longitude-find-v1.p.rapidapi.com/latlon.php?location=${encodedUrl}`,
-        headers: {'x-rapidapi-key':'b48a93a510msh672993d90bad886p10b7e4jsn84c6ed3f85f9',
+        headers: {'x-rapidapi-key': config.apikey,
               'x-rapidapi-host':'devru-latitude-longitude-find-v1.p.rapidapi.com'}
         });
 
