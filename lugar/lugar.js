@@ -1,7 +1,6 @@
 // HTTP Client for browser and Node.js
 const axios = require('axios');
 const config = require('../config')
-console.log(config);
 
 const getLugar = async (direccion) => {
 
