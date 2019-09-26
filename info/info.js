@@ -5,7 +5,7 @@ const getInfo = async (direccion) => {
     try {
         const coordenadas = await lugar.getLugar(direccion);
         const temp = await clima.getClima(coordenadas.latitud, coordenadas.longitud);
-        return console.log(`El clima de ${direccion} es de ${temp}`)
+        return temp
     }
     catch (error) {
         console.log(`No existe esa dirección`)
