@@ -1,16 +1,19 @@
-const lugar = require ('./lugar/lugar');
-const clima = require ('./clima/clima');
 const info = require ('./info/info');
 
 const express = require('express'),
 cors = require('cors'),
 app = express();
 
+// This array contains the list of valid URLs, 
+// in this case, the port is 4200, he one we're using for Angular Applications
+
 const originsWhitelist = [
     'http://localhost:4200',      // this is my front-end url for development
   ];
 
-  const corsOptions = {
+// Import cors options in order to get access 
+
+const corsOptions = {
     origin: function(origin, callback){
           var isWhitelisted = originsWhitelist.indexOf(origin) !== -1;
           callback(null, isWhitelisted);
@@ -24,6 +27,8 @@ app.get('/', function(req, res) {
   res.send('hello world');
 });
 
+// On weather, we require the city and return the temperature
+
 app.get('/weather', function(req, res) {
     let query = req.query;
     info.getInfo(query.city).then(weather => {
@@ -35,26 +40,9 @@ app.get('/weather', function(req, res) {
     })
     
   });
+// This is the back end port we're using
 
 app.listen(3000);
   
 
 
-// const argv = require('yargs').options({
-//     direccion:{
-//         alias:'d',
-//         desc:'Direccion',
-//         demmand: true
-//     }
-// }).argv;
-
-// lugar.getLugar(argv.direccion)
-//      .then (console.log)    
-
-// clima.getClima(45.419998, -75.690002)
-//      .then (console.log)
-//      .catch(console.log)
-
-// info.getInfo(argv.direccion)
-//         .then(console.log)
-//         .catch(console.log) 
