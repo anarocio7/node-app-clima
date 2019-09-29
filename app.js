@@ -20,6 +20,7 @@ const corsOptions = {
     },
     credentials:true
   }
+
   //here is the magic
   app.use(cors(corsOptions));
 
@@ -33,9 +34,8 @@ app.get('/weather', function(req, res) {
     let query = req.query;
     info.getInfo(query.city).then(weather => {
         objectWeather = {
-            weather: weather
+            weather: weather,
         }
-
         res.send(objectWeather);
     })
     
