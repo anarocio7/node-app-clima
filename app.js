@@ -31,18 +31,13 @@ app.get('/', function(req, res) {
 // On weather, we require the city and return the temperature
 
 app.get('/weather', function(req, res) {
-    let query = req.query;
-    info.getInfo(query.city).then(weather => {
-        objectWeather = {
-            weather: weather,
-        }
-        res.send(objectWeather);
-    })
-    
-  });
+  let query = req.query;
+  info.getInfo(query.city).
+    then(data => res.send(data) );
+});
 // This is the back end port we're using
 
-app.listen(3000);
+app.listen(3000, () => console.log('listening'));
   
 
 
