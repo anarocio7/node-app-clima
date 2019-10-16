@@ -6,9 +6,10 @@ const getClima = async (lat, lon) => {
     
     const data = {
         temp: response.data.main.temp,
-        description: response.data.weather.length ? response.data.weather[0].description : '' 
+        description: response.data.weather.length ? response.data.weather[0].description : '',
     }
     return data;
+    
 }
 
 module.exports = {

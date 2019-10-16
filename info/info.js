@@ -8,7 +8,7 @@ const getInfo = async (direccion) => {
         return temp
     }
     catch (error) {
-        console.log(`No existe esa dirección`)
+        return `We don't have information about that city`
     }
     
 

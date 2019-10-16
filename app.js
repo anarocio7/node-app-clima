@@ -35,7 +35,7 @@ app.get('/weather', function(req, res) {
   info.getInfo(query.city).
     then(data => res.send(data) );
 });
-// This is the back end port we're using
+// This is the backend port we're using
 
 app.listen(3000, () => console.log('listening'));
   
